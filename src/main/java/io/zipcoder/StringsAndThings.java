@@ -19,11 +19,11 @@ public class StringsAndThings {
      * been removed (not case sensitive). You may assume that the remove string is length 1 or more.
      * Remove only non-overlapping instances, so with "xxx" removing "xx" leaves "x".
      *
-     * example : withoutString("Hello there", "llo") // Should return "He there"
-     *           withoutString("Hello there", "e") //  Should return "Hllo thr"
-     *           withoutString("Hello there", "x") // Should return "Hello there"
+     * example : removeString("Hello there", "llo") // Should return "He there"
+     *           removeString("Hello there", "e") //  Should return "Hllo thr"
+     *           removeString("Hello there", "x") // Should return "Hello there"
      */
-    public String withoutString(String base, String remove){
+    public String removeString(String base, String remove){
         return null;
     }
 
@@ -31,11 +31,11 @@ public class StringsAndThings {
      * Given a string, return true if the number of appearances of "is" anywhere in the string is equal
      * to the number of appearances of "not" anywhere in the string (case sensitive)
      *
-     * example : equalIsNot("This is not")  // Should return false
-     *           equalIsNot("This is notnot") // Should return true
-     *           equalIsNot("noisxxnotyynotxisi") // Should return true
+     * example : containsEqualNumberOfIsAndNot("This is not")  // Should return false
+     *           containsEqualNumberOfIsAndNot("This is notnot") // Should return true
+     *           containsEqualNumberOfIsAndNot("noisxxnotyynotxisi") // Should return true
      */
-    public Boolean equalIsNot(String input){
+    public Boolean containsEqualNumberOfIsAndNot(String input){
         return null;
     }
 
