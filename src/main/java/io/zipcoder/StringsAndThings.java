@@ -1,5 +1,9 @@
 package io.zipcoder;
 
+
+/**
+ * @author tariq
+ */
 public class StringsAndThings {
 
     /**
