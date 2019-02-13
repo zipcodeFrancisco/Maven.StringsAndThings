@@ -1,5 +1,14 @@
 package io.zipcoder;
 
+import java.lang.String.*;
+
+import org.apache.commons.lang.StringUtils;
+import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
+
+import java.sql.SQLOutput;
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * @author tariq
@@ -14,8 +23,20 @@ public class StringsAndThings {
      *           countYZ("day fez"); // Should return 2
      *           countYZ("day fyyyz"); // Should return 2
      */
+
+
+
     public Integer countYZ(String input){
-        return null;
+        String arrayStr[] = input.split(" ");
+        Integer counter = 0;
+        for( String s : arrayStr ){
+            if( s.endsWith("y") || s.endsWith("z")){
+                counter++;
+            }
+        }
+        //System.out.println( "Salida: " + Arrays.toString(arrayStr) );
+
+        return counter;
     }
 
     /**
@@ -28,7 +49,9 @@ public class StringsAndThings {
      *           removeString("Hello there", "x") // Should return "Hello there"
      */
     public String removeString(String base, String remove){
-        return null;
+        // System.out.println( "Base: " + base + " - " + "Remove: " + remove );
+        String result = base.replaceAll(remove,"");
+        return result ;
     }
 
     /**
@@ -39,8 +62,15 @@ public class StringsAndThings {
      *           containsEqualNumberOfIsAndNot("This is notnot") // Should return true
      *           containsEqualNumberOfIsAndNot("noisxxnotyynotxisi") // Should return true
      */
-    public Boolean containsEqualNumberOfIsAndNot(String input){
-        return null;
+    public Boolean containsEqualNumberOfIsAndNot(String input)
+    {
+        System.out.println(input);
+        Integer isWords = StringUtils.countMatches(input, "is");
+        Integer notWords = StringUtils.countMatches(input, "not");
+        Boolean result = isWords.equals(notWords);
+        System.out.println("Is: " + isWords + " Not: "+ notWords + " Res: " + result);
+
+        return result;
     }
 
     /**
@@ -51,7 +81,36 @@ public class StringsAndThings {
      *           gHappy("xxggyygxx") // Should return  false
      */
     public Boolean gIsHappy(String input){
-        return null;
+        System.out.println(input);
+        //System.out.println(StringUtils.countMatches(input,"g"));
+        String[] dummyArray = input.split("");
+        System.out.println( Arrays.toString(dummyArray) );
+        for( int i = 0; i < dummyArray.length; i++ ){
+            if( !dummyArray[i].equals("g")){
+                dummyArray[i] = "x";
+            }
+        }
+        System.out.println( Arrays.toString(dummyArray));
+        String str = StringUtils.join(dummyArray,"");
+        System.out.println(str);
+        str = str.replaceAll("x"," " );
+        System.out.println(str);
+        str = str.trim().replaceAll(" +", " ");
+        System.out.println(str);
+        String[] dummyArray2 = str.split(" ");
+        System.out.println( Arrays.toString(dummyArray2));
+        Boolean flag = false;
+        for (String s : dummyArray2){
+            if(s.length() > 1){
+                flag = true;
+            }
+            System.out.println(s+"-"+flag);
+        }
+//        for(int i = 0; i <dummyArray.length; i++){
+//            if( dummyArray[i] == "");
+//        }
+//        System.out.println(Arrays.toString(dummyArray));
+        return flag;
     }
 
 
@@ -63,6 +122,28 @@ public class StringsAndThings {
      *            countTriple("a") // Should return 0
      */
     public Integer countTriple(String input){
-        return null;
+        Integer lengthStr = input.length();
+        System.out.println(input + "-" + lengthStr);
+        String container = String.valueOf(input.charAt(0));
+        System.out.println( input.charAt(0) );
+        String input2 = input + "h";
+        Integer counter = 1;
+        Integer secondCounter = 0;
+        for (int i = 1; i < input2.length()-1; i++ ){
+            System.out.println( i+ "-I:"+input2.charAt(i) + "-C:" + container + "-L:" + container.length() + " C:"+counter + " -- "+secondCounter);
+            if ( input2.charAt(i) != input2.charAt(i+1) ){
+                container = String.valueOf(input2.charAt(i));
+                counter = 0;
+            }
+            else {
+                container = String.valueOf(input2.charAt(i));
+                counter++;
+                if(counter > 1){
+                    secondCounter++;
+                }
+            }
+        }
+        System.out.println("End: " + secondCounter);
+        return secondCounter;
     }
 }

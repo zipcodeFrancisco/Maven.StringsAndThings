@@ -20,13 +20,17 @@ public class ContainsEqualNumberOfIsAndNotTest {
     @Test
     public void equalIsNotTest1(){
         Boolean actual = stringsAndThings.containsEqualNumberOfIsAndNot("This is not");
-        Assert.assertTrue(actual);
+        // Assert.assertTrue(actual);
+        // The assert in this exercise was wrong and I changed from True to False!!
+        Assert.assertFalse(actual);
     }
 
     @Test
     public void equalIsNotTest2(){
         Boolean actual = stringsAndThings.containsEqualNumberOfIsAndNot("This is notnot");
-        Assert.assertFalse(actual);
+        // Assert.assertFalse(actual);
+        // The assert in this exercise was wrong and I changed from False to True!!
+        Assert.assertTrue(actual);
     }
 
     @Test

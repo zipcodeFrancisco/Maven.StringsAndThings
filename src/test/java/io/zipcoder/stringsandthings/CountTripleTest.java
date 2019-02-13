@@ -18,6 +18,7 @@ public class CountTripleTest {
     public void countTripleTest1(){
         Integer expected = 1;
         Integer actual = stringsAndThings.countTriple("abcXXXabc");
+        //Integer actual = stringsAndThings.countTriple("aXXXaYYYYrrrp");
         Assert.assertEquals(expected, actual);
     }
 
